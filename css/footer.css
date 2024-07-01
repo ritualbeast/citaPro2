@@ -1,0 +1,81 @@
+
+  
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .footer-section h1,
+  .footer-section h2 {
+    color: #0054a6;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-section p {
+    margin: 5px 0;
+  }
+  
+  .logo-img {
+    width: 50px;
+    height: auto;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  .footer-section .social-icons img:last-child {
+    margin-right: 0;
+  }
+  
+
+  .footerImagen {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .footer-title {
+    font-size: 24px;
+    color: #0067b8;
+    font-weight: 700;
+    font-family: "Poppins";
+  }
+
+  .footer-link {
+    font-size: 14px;
+    color: #000000;
+    font-weight: 300;
+    font-family: "Poppins";
+
+    }
+    
+    .contacto-borde {
+        border-left: 1px solid #000; /* Ajusta el color y grosor del borde según sea necesario */
+        border-right: 1px solid #000; /* Ajusta el color y grosor del borde según sea necesario */
+        padding-left: 10px; /* Opcional: Añade un poco de padding para separar el contenido del borde */
+        padding-right: 10px; /* Opcional: Añade un poco de padding para separar el contenido del borde */
+    }
+    
+    .contact-info {
+        text-align: left !important;
+    }

@@ -1,0 +1,75 @@
+
+
+.appointment-software {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ececec;
+}
+
+.appointment-software h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #1d1d1d;
+}
+
+.appointment-software p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+.business-types {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.business-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 136px;
+    height: 190px;
+    border-radius: 13px;
+    background-color: #c3daea;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-self: center;
+    justify-content: center;
+}
+
+.business-type img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+}
+
+.business-type p {
+    font-size: 22px;
+    line-height: 22px;
+    color: #304050;
+    font-family: "MyCustomFont";
+    text-align: center;
+}
+
+
+.appointment-software-title {
+    
+    font-size: 48px;
+    color: #002140;
+    font-weight: 700;
+    font-family: "Poppins";
+
+}
+
+.appointment-software-description {
+    
+    font-size: 28px;
+    line-height: 35px;
+    color: #0067b8;
+    font-weight: 500;
+    font-family: "Poppins";
+    text-align: center;
+
+}
+

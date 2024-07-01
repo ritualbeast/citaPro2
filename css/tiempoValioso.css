@@ -1,0 +1,21 @@
+.tiempoValiosoTitulo {
+    font-size: 38px;
+    line-height: 41px;
+    color: #0067b8;
+    font-weight: 600;
+    font-family: "Poppins";
+
+}
+
+.tiempoValiosoTexto {
+    font-size: 20px;
+    color: #1e1e1e;
+    font-weight: 400;
+    font-family: "Poppins";
+}
+
+.tiempoValioso {
+    background-color: #dfedf7;
+    margin: 0;
+    padding: 0;
+}

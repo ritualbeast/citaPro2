@@ -1,0 +1,49 @@
+.contact-title {
+    font-size: 48px;
+    color: #4bdaff;
+    font-weight: 700;
+    font-family: "Poppins";
+}
+
+
+.contact {
+    background-color: #002140;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.contact-subtitle {
+    font-size: 21px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "Poppins";
+}
+
+.contact-input {
+    font-size: 21px;
+    color: #4bdaff !important;
+    background-color: #002140;
+    font-weight: 300;
+    font-family: "Poppins";
+    border-style: solid;
+    border-width: 1px;
+    border-color: #4bdaff;
+    border-radius: 7px;
+    margin: 20px 0;
+    width: 96%;
+    align-items : left;
+    
+}
+
+.contact-button {
+    width: 232px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: #4bdaff;
+}
+.contact-button-text {
+    font-size: 29px;
+    color: #002140;
+    font-weight: 700;
+    font-family: "Poppins";
+}

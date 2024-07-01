@@ -1,0 +1,190 @@
+
+.plans {
+    padding: 50px 0;
+    background: #e0e1e2;
+}
+.toggle {
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.toggle-option {
+    padding: 10px 20px;
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    
+    font-size: 24px;
+    color: #0067b8;
+    font-weight: 600;
+    font-family: "Poppins";
+}
+
+.toggle-option.active {
+    background: linear-gradient(90deg, #1288ef 0%, #2bb8fb 100%);
+    width: 418px;
+    border-radius: 17px;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: "Poppins";
+}
+
+.plan-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.plan {
+    
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.plan-pro {
+    border: 2px solid #007bff;
+}
+
+.plan .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plan .badge {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.plan h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.plan p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.plan .price {
+    font-size: 22px;
+    line-height: 27px;
+    color: #0067b8;
+    font-weight: 500;
+    font-family: "Poppins";
+    text-align: center;
+}
+
+.trial-button {
+    font-size: 23px;
+    color: #ebebeb;
+    font-weight: 700;
+    font-family: "Poppins";
+    background: linear-gradient(90deg, #1288ef 0%, #2bb8fb 100%);
+    width: 289px;
+    height: 33px;
+    border-radius: 9px;
+    border-style: none;
+}
+
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plan ul li {
+    background: url('check-icon.png') no-repeat left center;
+    font-size: 18px;
+    line-height: 33px;
+    color: #000000;
+    font-weight: 500;
+    font-family: "Poppins";
+}
+
+.plans-title {
+    font-size: 48px;
+    color: #002140;
+    font-weight: 700;
+    font-family: "Poppins";
+}
+
+.plans-subtitle {
+    width: 628px;
+    height: 40px;
+    font-size: 28px;
+    line-height: 35px;
+    color: #0067b8;
+    font-weight: 500;
+    font-family: "Poppins";
+    text-align: center;
+    }
+
+.plan-card-title {
+    font-size: 29px;
+    color: #002140;
+    font-weight: 700;
+    font-family: "Poppins";
+}
+
+.plan-card-description {
+    
+    font-size: 20px;
+    color: #1e1e1e;
+    font-weight: 400;
+    font-family: "Poppins";
+    text-align: center;
+    
+}
+
+.plan-pro{
+    border-radius: 24px;
+    width: 45%;
+    background-color: #daeffb !important;
+}
+
+
+.plan-premium{
+    border-radius: 24px;
+    width: 45%;
+    background-color: #ffffff !important;
+}
+
+.plan-card-includes{
+    font-size: 20px;
+    color: #1e1e1e;
+    font-weight: 400;
+    font-family: "Poppins";
+    text-align: center;
+}
+
+.price-amount{
+    font-size: 58px;
+    letter-spacing: -2px;
+    color: #002140;
+    font-weight: 700;
+    font-family: "Poppins";
+}
+
+.plan-card-includes{
+    font-size: 22px;
+    line-height: 27px;
+    color: #0067b8;
+    font-weight: 500;
+    font-family: "Poppins";
+    text-align: center;
+}
+
+
+
+
