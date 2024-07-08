@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CitaPro</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/testimonios.css">
     <link rel="stylesheet" href="css/reserva.css">
     <link rel="stylesheet" href="css/planes.css">
@@ -17,13 +17,16 @@
     <link rel="stylesheet" href="css/agendaVirtual.css">
     <link rel="stylesheet" href="css/negocioControlado.css">
     <link rel="stylesheet" href="css/tiempoValioso.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
+    
 
     <script>
       function toggleMenu() {
@@ -31,8 +34,49 @@
           navbar.classList.toggle('active');
       }
     </script>
-      
+    <script>
+      function togglePlan(plan) {
+        var plans = document.querySelectorAll('.plan');
+        var options = document.querySelectorAll('.toggle-option');
+        
+        plans.forEach(function(p) {
+          p.classList.remove('active');
+        });
+        
+        options.forEach(function(option) {
+          option.classList.remove('active');
+        });
+        
+        document.querySelector('.plan-' + plan).classList.add('active');
+        document.querySelector('.toggle-option.' + plan).classList.add('active');
+      }
 
+      // Activate the default toggle option
+      document.querySelector('.toggle-option.default').classList.add('active');
+    </script>
+      
+      <script>
+        function toggleSection() {
+          const section = document.querySelector('.hidden-section');
+          const section2 = document.querySelector('.hidden-section2');
+          const section3 = document.querySelector('.hidden-section3');
+          const button = document.querySelector('.btn');
+      
+          // Si la sección está oculta, mostrarla
+          if ((section.style.display === 'none' && section2.style.display === 'none' && section3.style.display === 'none') || (section.style.display === '' && section2.style.display === '' && section3.style.display === '')) {
+            section.style.display = 'block';
+            section2.style.display = 'block';
+            section3.style.display = 'block';
+            button.innerHTML = 'Ver menos <img src="assets/crecimiento/plus-pequeno.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">';
+          } 
+          else { // Caso contrario, ocultarla
+            section.style.display = 'none';
+            section2.style.display = 'none';
+            section3.style.display = 'none';
+            button.innerHTML = 'Explora más <img src="assets/crecimiento/plus-pequeno.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">';
+          }
+        }
+      </script>
 
 </head>
 <body>
@@ -57,46 +101,89 @@
   </header>
 
   <section class="promo-section">
-    <div class="customS-shape"></div>
-    <div class="customS-shape2"></div>
-    <div class="customS-shape3"></div>
-    <div class="customS-shape4"></div>
-    
-    <div class="custom-shape"></div>
-    <div class="custom-shape2"></div>
-    <div class="custom-shape3"></div>
-    <div class="custom-shape4"></div>
-    <div class="container">
-        <div class="row align-items-center">
-            
-            <div class="col-md-6 promo-text">
-                <span class="promo-subtitle">
-                  Digita, Controla y 
-                </span>
-                <span class="promo-subtitle2">
-                  Automatiza tu negocio
-                </span>
-                <p class="promo-description">
-                  Gestiona tus citas, recordatorios, clientes y colaboradores, desde un solo lugar.</p>
-                <div class="promo-button">
-                  <span class="promo-button-text">
-                    Prueba Gratis 10 días
-                  </span>
+    <!-- Configuración para escritorio -->
+    <div class="desktop-promo d-none d-md-block">
+        <div class="customS-shape"></div>
+        <div class="customS-shape2"></div>
+        <div class="customS-shape3"></div>
+        <div class="customS-shape4"></div>
+        
+        <div class="custom-shape"></div>
+        <div class="custom-shape2"></div>
+        <div class="custom-shape3"></div>
+        <div class="custom-shape4"></div>
+        <div class="container">
+            <div class="row align-items-center promo-content">
+                <div class="col-md-6 promo-text">
+                    <div class="promo-subtitle">
+                      Digita, Controla y 
+                    </div>
+                    <div class="promo-subtitle2">
+                      Automatiza tu negocio
+                    </div>
+                    <div class="promo-description">
+                      Gestiona tus citas, recordatorios, clientes y colaboradores, desde un solo lugar.
+                    </div>
+                    <div class="promo-button">
+                      <span class="promo-button-text">
+                        Prueba Gratis 10 días
+                      </span>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 promo-image">
-                <img src="doctor-image.png" alt="Doctor">
-                <div class="overlay-calendar">
-                    <img src="calendar.png" alt="Calendar">
-                </div>
-                <div class="overlay-details">
-                    <img src="details.png" alt="Details">
+                <div class="col-md-6 promo-image">
+                  <img src="assets/header/doctoraSin.png" alt="Imagen de CitaPro" class="image">
+                  <video src="assets/header/citaa.mp4" autoplay loop muted class="video" width="20%" height="20%"></video>
                 </div>
             </div>
         </div>
     </div>
-  </section>
 
+    <!-- Configuración para dispositivos móviles -->
+    <div class="mobile-promo d-block d-md-none">
+        <div class="customS-shape"></div>
+        <div class="customS-shape2"></div>
+        <div class="customS-shape3"></div>
+        <div class="customS-shape4"></div>
+        
+        <div class="custom-shape"></div>
+        <div class="custom-shape2"></div>
+        <div class="custom-shape3"></div>
+        <div class="custom-shape4"></div>
+        <div class="container">
+            <div class="row align-items-center promo-content">
+                <div class="col-12 promo-text">
+                    <div class="promo-subtitle">
+                      Digita, Controla y 
+                    </div>
+                    <div class="promo-subtitle2">
+                      Automatiza tu negocio
+                    </div>
+                </div>
+                <div class="col-12 promo-image">
+                    <img src="assets/header/doctoraSin.png" alt="Imagen de CitaPro" class="image">
+                    <video src="assets/header/citaa.mp4" autoplay loop muted class="video" width="100%" height="auto"></video>
+                </div>
+                <div class="col-12 promo-text">
+                    <div class="promo-description">
+                      Gestiona tus citas, recordatorios, clientes y colaboradores, desde un solo lugar.
+                    </div>
+                    <div class="promo-button">
+                      <span class="promo-button-text">
+                        Prueba Gratis 10 días
+                      </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+  
+
+  
   <section class="appointment-software">
     <div class="appointment-software-title-container d-flex flex-column align-items-center">
       <span class="appointment-software-title">
@@ -110,91 +197,100 @@
     <p class="appointment-software-description">
       ¿A qué tipos de negocio ayudamos?
     </p>
-    <div class="business-types">
-        <div class="business-type">
-            <img src="assets/appointment/cruz.png" alt="Centros Médicos">
-            <p>Centros Médicos</p>
-        </div>
-        <div class="business-type">
-            <img src="assets/appointment/esteticista.png" alt="Clínicas Estéticas">
-            <p>Clínicas Estéticas</p>
-        </div>
-        <div class="business-type">
-            <img src="assets/appointment/tijeras.png" alt="Salones de Belleza">
-            <p>Salones de Belleza</p>
-        </div>
-        <div class="business-type">
-            <img src="assets/appointment/barberia.png" alt="Barberías">
-            <p>Barberías</p>
-        </div>
-        <div class="business-type">
-            <img src="assets/appointment/spa.png" alt="Spa">
-            <p>Spa</p>
-        </div>
-        <div class="business-type">
-            <img src="assets/appointment/mano.png" alt="Centros de Uñas">
-            <p>Centros de Uñas</p>
-        </div>
-        <div class="business-type">
-            <img src="assets/appointment/pestana.png" alt="Estudio de Pestañas">
-            <p>Estudio de Pestañas</p>
-        </div>
+    <div class="business-typesContainer">
+
+    
+
+      <div class="business-types">
+          <div class="business-type">
+              <img src="assets/appointment/cruz.png" alt="Centros Médicos">
+              <p>Centros Médicos</p>
+          </div>
+          <div class="business-type">
+              <img src="assets/appointment/esteticista.png" alt="Clínicas Estéticas">
+              <p>Clínicas Estéticas</p>
+          </div>
+          <div class="business-type">
+              <img src="assets/appointment/tijeras.png" alt="Salones de Belleza">
+              <p>Salones de Belleza</p>
+          </div>
+          <div class="business-type">
+              <img src="assets/appointment/barberia.png" alt="Barberías">
+              <p>Barberías</p>
+          </div>
+          <div class="business-type">
+              <img src="assets/appointment/spa.png" alt="Spa">
+              <p>Spa</p>
+          </div>
+          <div class="business-type">
+              <img src="assets/appointment/mano.png" alt="Centros de Uñas">
+              <p>Centros de Uñas</p>
+          </div>
+          <div class="business-type">
+              <img src="assets/appointment/pestana.png" alt="Estudio de Pestañas">
+              <p>Estudio de Pestañas</p>
+          </div>
+      </div>
+
     </div>
-  </section> -->
-
+  </section> 
+  
 
 
     
-    
+ 
 
   <section class="crecimiento">
-      <div class="container d-flex">
-        <div class="image-section col-12 col-md-6">
-          <div class="contenedorImagen">
-            <img src="https://via.placeholder.com/600x600" alt="Imagen de Barbería">
-            <div class="text-over-image">
-                <div class="box">
-                    <p>19 Barbería<br>10:00 AM</p>
-                </div>
-                <div class="box" style="background-color: rgba(0, 255, 255, 0.7);">
-                    <p>23 Examen<br>06:00 AM</p>
-                </div>
+    <!-- Configuración para escritorio -->
+    <div class="desktop-crecimiento d-none d-md-block">
+      <div class="container d-flex mb-5 flex-md-row">
+        <div class="image-section col-12 col-md-6 order-1">
+          <img src="assets/crecimiento/barberia (1).png" alt="Barbería" class="img-fluid" style="border-radius: 10px;">
+        </div>
+        <div class="info-section col-12 col-md-6 order-2">
+          <span class="crecimiento-title">
+            Garantizamos el crecimiento de tu negocio
+          </span>
+          <div>
+            <div></div>
+            <div>
+              <img src="assets/crecimiento/recorda.png" alt="Recordatorios" class="img-fluid">
             </div>
           </div>
         </div>
-        <div class="info-section col-12 col-md-6">
-            <span class="crecimiento-title">
-              Garantizamos el crecimiento de tu negocio
-            </span>
-            <div>
-              <div>
-
-              </div>
-              <div>
-                <div class="info-box">
-                  <img src="assets/crecimiento/wasa.png" alt="WhatsApp" class="img-fluid" width="20" height="20">
-                  <p>
-                    Recordatorios Automáticos</p>
-                </div>
-                <div class="info-box">
-                    <img src="assets/crecimiento/agenda.png" alt="Icono de Agenda">
-                    <p>Agenda Virtual 24/7</p>
-                </div>
-                <div class="info-box">
-                    <img src="assets/crecimiento/usuario.png" alt="Icono de Usuario">
-                    <p>Usuarios Ilimitados</p>
-                </div>
-              </div>
-            </div>
-            
-        </div>
       </div>
-      
+    </div>
+  
+    <!-- Configuración para dispositivos móviles -->
+    <div class="mobile-crecimiento d-block d-md-none">
+      <div class="container d-flex mb-5 flex-column">
+        <div class="info-section col-12 order-1">
+          <span class="crecimiento-title">
+            Garantizamos el crecimiento de tu negocio
+          </span>
+        </div>
+        <div class="image-section col-12 order-2">
+          <img src="assets/crecimiento/barberia (1).png" alt="Barbería" class="img-fluid" style="border-radius: 10px;">
+        </div>
+        <div class="col-12 order-3">
+          <img src="assets/crecimiento/recorda.png" alt="Recordatorios" class="img-fluid">
+        </div>
+        <div class="col-12 d-flex justify-content-center order-4">
+          <button class="crecimientoBtn" onclick="toggleSection()">Explora más <img src="assets/crecimiento/plus-pequeno.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20"></button>
+        </div>
+  
+      </div>
+    </div>
   </section>
+  
 
 
-  <section class="tiempoValioso">
-      <div class="container">
+
+  
+
+
+  <section class="tiempoValioso hidden-section">
+      <div class="container containerTiempoValioso">
         <div class="row ">
           <div class="col-md-2"></div>
           <div class="col-md-4 mt-3">
@@ -208,17 +304,20 @@
             </p>
           </div>
           <div class="col-md-6 text-center">
-            <img src="./assets/img/branding/gifcita2.gif" alt="Asistente Virtual" class="img-fluid" style="border-radius: 10px;">
+            <img src="assets/tiempoValioso/recordatorio.png"
+            alt="Asistente Virtual" class="img-fluid" style="border-radius: 10px;">
           </div>
         </div>
       </div>
   </section>
     
-  <section class="agendaVirtual" id="scrollspyServices">
-      <div class="container">
+
+  <section class="agendaVirtual hidden-section2" id="scrollspyServices">
+      <div class="container containerAgendaVirtual">
         <div class="row" style="align-self: start;">
-          <div class="col-md-6 text-center" style="align-self: start;">
-            <img src="./assets/img/branding/citaproNoche.jpg" alt="Agenda Virtual" class="img-fluid" style=" border-radius: 10px;">
+          <div class="col-md-6 text-center agendaImagen" style="align-self: start;">
+            <img src="assets/agendaVirtual/agendaVirtual.png"
+             alt="Agenda Virtual" class="img-fluid" style=" border-radius: 10px;">
           </div>
           <div class="col-md-2"></div>
           <div class="col-md-4 mt-3">
@@ -238,13 +337,13 @@
       </div>
   </section>
 
-  <section class="negocioControlado">
-      <div class="container">
+  <section class="negocioControlado hidden-section3">
+      <div class="container containerNegocioControlado">
         <div class="row ">
           
           <div class="col-md-2"></div>
           <div class="col-md-4 mt-3">
-            <p class="negocioControladoTitulo mt-5 mb-5">
+            <p class="negocioControladoTitulo  mb-5">
               Negocio 100% Controlado</p>
             
             <p class="negocioControladoTexto">
@@ -252,33 +351,69 @@
                smartphone o pc, la información de la agenda de tus colaboradores,
                 citas confirmadas, reagendamiento o cancelaciones.</p>
           </div>
-          <div class="col-md-6 text-center">
-            <img src="./assets/img/branding/gifcita1.gif
-            " alt="Control de Negocio" class="img-fluid" style=" border-radius: 10px;">
-          </div>
+          <div class="col-md-6 text-center position-relative">
+            <img src="assets/negocioControlado/controlado.png" alt="Control de Negocio" class="img-fluid main-image" style="border-radius: 10px;">
+            <img src="assets/negocioControlado/gifcita1.gif" alt="Control de Negocio" class="img-fluid overlay-image" style="border-radius: 10px;">
+        </div>
+        
           
         </div>
       </div>
-  </section>
+  </section> 
 
+  <section class="reserva-donde-quieras text-center py-5">
+    <div class="container">
+        
+    
+      <h2 class="reserva-titulo">¡Reserva donde quieras!</h2>
+      <div class="reserva-descripcion mx-auto">
+          Permite a tus clientes reservar desde tus redes sociales: Instagram, Facebook, Tik Tok o sitio web. 
+          Con CitaPro, tus ventas crecerán hasta un 55% durante el primer año de uso del software.
+      </div>
+      <div class="redes-sociales d-flex justify-content-center mt-4">
+        
+          <div class="icono-red">
+              <img src="assets/reserva/whatsapp.png" alt="WhatsApp" class="img-fluid"  width="50" height="50">
+          </div>
+          <div class="icono-red">
+              <img src="assets/reserva/facebook.png" alt="Facebook" class="img-fluid" width="53" height="53">
+          </div>
+          <div class="icono-red">
+              <img src="assets/reserva/instagram.png" alt="Instagram" class="img-fluid"  width="53" height="53">
+          </div>
+          <div class="icono-red">
+              <img src="assets/reserva/tiktokImagen.png" alt="TikTok" class="img-fluid" style="border-radius: 15px;" width="53" height="53">
+          </div>
+          <div class="icono-red">
+              <img src="assets/reserva/youtube.png" alt="YouTube" class="img-fluid" width="53" height="53">
+          </div>
+          <div class="icono-red">
+              <img src="assets/reserva/citaPro.png" alt="CitaPro" class="img-fluid bg-white" style="border-radius: 15px;"  width="53" height="53">
+          </div>
+      </div>
+
+    </div>
+  </section> 
     
   <section class="plans">
     <div class="container">
-
       <div class="d-flex justify-content-center">
-          <div class="plans-title">¡Conoce nuestros planes!</div>
-
+        <div class="plans-title">¡Conoce nuestros planes!</div>
       </div>
       <div class="d-flex justify-content-center">
-          <div class="plans-subtitle">¡Sé el próximo en optimizar tu negocio!</div>
+        <div class="plans-subtitle">¡Sé el próximo en optimizar tu negocio!</div>
       </div>
-      <div class="toggle mt-5 mb-5">
-          <div class="toggle-option active">Mensual</div>
-          <div class="toggle-option">Anual (2 meses gratis)</div>
+      <div class="d-flex justify-content-center w-100">
+        <div class="toggle mt-5 mb-5">
+          <div class="toggle-option active" onclick="togglePlan('pro')">Plan Pro</div>
+          <div class="toggle-option" onclick="togglePlan('premium')">Plan Premium</div>
+        </div>
       </div>
       <div class="plan-container">
-          <div class="plan plan-pro">
-            <div >
+        
+        
+          <div class="plan plan-pro active">
+            <div>
               <div class="w-100 d-flex justify-content-end">
                 <div class="badge w-20 justify-content-right">Más Popular</div>
                 
@@ -291,7 +426,7 @@
               
               
             </div>
-            <div class="p-4">
+            <div class="planP4">
 
             
               
@@ -299,16 +434,28 @@
               
               <p class="plan-card-description">Para independientes o negocios pequeños que necesitan de un aliado para controlar y hacer crecer sus ventas.</p>
               <div class="d-flex justify-content-center">
-                <p class="price">Desde: 
-                  <span class="price-amount">
-                    $60.00 
-                  </span>
+                <p class="price justify-content-right">
+                  Desde: 
+                </p> 
+                <br>
+                <span class="price-amount justify-content-center">
+                  $60.
+                
+                </span>
+                <span class="price-amount-decimal">
+                  00
+                </span>
+                <br>
+                <p class="price justify-content-end mt-auto">
                   USD/Mes
+                </p>
+              </div>
+              <div class="d-flex justify-content-center">
+                <button class="trial-button mt-3 mb-3">
+                  Prueba Gratis 10 días
+                </button>
               </div>
               
-              <button class="trial-button mt-3 mb-3">
-                Prueba Gratis 10 días
-              </button>
               
               <div class="plan-card-includes mt-3 mb-3">
                   
@@ -335,299 +482,467 @@
                     Notificaciones y alertas diarias</li>
               </ul>
             </div>
+            
           </div>
+          
           <div class="plan plan-premium">
               
+            <div class="w-100 d-flex justify-content-end">
+              <div class="badge w-20 justify-content-right"></div>
+              
+            </div>
             <div class="d-flex justify-content-center">
               <div class="plan-card-title">
                 Plan Premium
               </div>
             </div>
-              
-              <p class="plan-card-description">Para negocios que buscan organizarse, controlar su administración, tener el control y llevar un seguimiento de pacientes/clientes personalizable y hacer crecer sus ventas.</p>
-              <div class="d-flex justify-content-center">
-                <p class="price">Desde: 
-                  <span class="price-amount">
-                    $75.00 
-                  </span>
-                  USD/Mes
-              </div>
-              <button class="trial-button">Prueba Gratis 10 días</button>
-              <div class="plan-card-includes mt-3 mb-3">
+              <div class="planP4">
+
+                <p class="plan-card-description">Para negocios que buscan organizarse, controlar su administración, tener el control y llevar un seguimiento de pacientes/clientes personalizable y hacer crecer sus ventas.</p>
+                <div class="d-flex justify-content-center">
+                  <p class="price justify-content-right">
+                    Desde: 
+                  </p> 
+                  <br>
+                  <span class="price-amount justify-content-center">
+                    $75.
                   
-                Incluye:
+                  </span>
+                  <span class="price-amount-decimal">
+                    00
+                  </span>
+                  <br>
+                  <p class="price justify-content-end mt-auto">
+                    USD/Mes
+                  </p>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button class="trial-button mt-3 mb-3">
+                    Prueba Gratis 10 días
+                  </button>
+                </div>
+                
+                <div class="plan-card-includes mt-3 mb-3">
+                    
+                  Incluye:
+                </div>
+                <ul>
+                    <li>
+                      <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
+                      Todos los beneficios del Plan Básico</li>
+                    <li>
+                      <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
+                      2000 correos mensuales de marketing</li>
+                    <li>
+                      <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
+                      Encuestas de satisfacción</li>
+                    <li>
+                      <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
+                      Fichas personalizables</li>
+                    <li>
+                      <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
+                      Personalización de diseño</li>
+                    <li>
+                      <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
+                      Giftcards</li>
+                    <li>
+                      <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
+                      Presupuestos</li>
+                </ul>
+              
+                
               </div>
-              <ul>
-                  <li>
-                    <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
-                    Todos los beneficios del Plan Básico</li>
-                  <li>
-                    <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
-                    2000 correos mensuales de marketing</li>
-                  <li>
-                    <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
-                    Encuestas de satisfacción</li>
-                  <li>
-                    <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
-                    Fichas personalizables</li>
-                  <li>
-                    <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
-                    Personalización de diseño</li>
-                  <li>
-                    <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
-                    Giftcards</li>
-                  <li>
-                    <img src="assets/planes/flechaIzquierda.png" alt="Flecha Izquierda" class="img-fluid" width="20" height="20">
-                    Presupuestos</li>
-              </ul>
           </div>
       </div>
     </div>
   </section>
   
 
+  <section class="testimonios py-5 py-xl-8 bsb-section-py-xxl-1" id="scrollspyOpinion">
+      <div class="container mb-5 mb-md-6 mb-xl-10">
+        <div class="row justify-content-md-center">
+          <div class="col-12 col-md-9 col-lg-9 col-xl-9  col-xxl-9 text-center">
+            <span class="testimonios-title">Los profesionales confían en 
+              <span class="testimonios-title-highlight">CitaPro</span>
+              </span>
+          </div>
+        </div>
+      </div>
 
-  <section class="reserva-donde-quieras text-center py-5">
-    <h2 class="reserva-titulo">¡Reserva donde quieras!</h2>
-    <p class="reserva-descripcion">
-        Permite a tus clientes reservar desde tus redes sociales: Instagram, Facebook, Tik Tok o sitio web. 
-        Con CitaPro, tus ventas crecerán hasta un 55% durante el primer año de uso del software.
-    </p>
-    <div class="redes-sociales d-flex justify-content-center mt-4">
-      
-        <div class="icono-red">
-            <img src="assets/reserva/whatsapp.png" alt="WhatsApp" class="img-fluid"  width="50" height="50">
-        </div>
-        <div class="icono-red">
-            <img src="assets/reserva/facebook.png" alt="Facebook" class="img-fluid" width="53" height="53">
-        </div>
-        <div class="icono-red">
-            <img src="assets/reserva/instagram.png" alt="Instagram" class="img-fluid"  width="53" height="53">
-        </div>
-        <div class="icono-red">
-            <img src="assets/reserva/tiktokImagen.png" alt="TikTok" class="img-fluid" style="border-radius: 15px;" width="53" height="53">
-        </div>
-        <div class="icono-red">
-            <img src="assets/reserva/youtube.png" alt="YouTube" class="img-fluid" width="53" height="53">
-        </div>
-        <div class="icono-red">
-            <img src="assets/reserva/citaPro.png" alt="CitaPro" class="img-fluid bg-white" style="border-radius: 15px;"  width="53" height="53">
-        </div>
-    </div>
-  </section>
-  
+      <div class="container overflow-hidden pt-5">
+        <div class="row gy-4 gy-md-0 gx-xxl-5">
+        <div class="swiper-container d-md-none">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card-body p-4 p-xxl-5 testimonioCard">
+                <img class="img-fluid mb-4 testimonioCardImg"
+                    loading="lazy"
+                    src="./assets/testimonios/doctora1.jpeg"
+                    alt="Luna John"
+                    style="width: 120px; height: 120px; bottom: 70px; position: relative;
+                          border-radius: 50%;
+                          background-image: linear-gradient(white, white), 
+                                            linear-gradient(to right, #2bb8fb, #5c7cf2);
+                          background-origin: border-box;
+                          background-clip: content-box, border-box;">
+                <figure class="d-flex flex-column align-items-center">
+                  <figcaption class="text-center">
+                    <div class="quote-container">
+                      <span class="mb-4 testimonioCardTexto1">
+                        Tener CitaPro en nuestro centro, fue lo mejor que nos ha pasado, nos permitió diferenciarnos de la competencia e incrementar nuestro facturado. Ahora tenemos el control total de nuestra agenda, nuestros clientes pueden agendar sus citas automáticamente y recibir recordatorios.
+                      </span>
+                      <div class="quote-marks">
+                        <div class="quote-mark left-quote">“</div>
+                        <div class="quote-mark right-quote">”</div>
+                      </div>
+                    </div>
+                    <br><br>
+                    <div class="d-flex flex-column pt-5">
+                      <span class="mb-2 testimonioCardPersona">Juliana Jaramillo</span>
+                      <span class="fs-6 testimonioCardPersonaSub text-secondary mb-0">Madán Medical Spa</span>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
 
+            <div class="swiper-slide">
+              <div class="card-body p-4 p-xxl-5 testimonioCard">
+                <img class="img-fluid mb-4 testimonioCardImg"
+                    loading="lazy"
+                    src="./assets/testimonios/doctor1.png"
+                    alt="Luna John"
+                    style="width: 120px; height: 120px; bottom: 70px; position: relative;
+                          border-radius: 50%;
+                          background-image: linear-gradient(white, white), 
+                                            linear-gradient(to right, #2bb8fb, #5c7cf2);
+                          background-origin: border-box;
+                          background-clip: content-box, border-box;">
+                <figure class="d-flex flex-column align-items-center">
+                  <figcaption class="text-center">
+                    <div class="quote-container">
+                      <span class="mb-4 testimonioCardTexto1">
+                        Estaba acostumbrado a la clásica agenda manual que llevaba mi asistente, tenía un porcentaje alto de inasistencias por parte de los pacientes. Con el software de Citapro, cambió rotundamente el giro de mi centro médico, ahora todo es más organizado y por supuesto mis ingresos aumentaron significativamente.
+                      </span>
+                      <div class="quote-marks">
+                        <div class="quote-mark left-quote">“</div>
+                        <div class="quote-mark right-quote">”</div>
+                      </div>
+                    </div>
+                    <br><br>
+                    <div class="d-flex flex-column pt-5">
+                      <span class="mb-2 testimonioCardPersona">Dr. Hamilton Hernandez</span>
+                      <span class="fs-6 testimonioCardPersonaSub text-secondary mb-0">Hada Esthetic Spa</span>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
 
-    <section class="testimonios py-5 py-xl-8 bsb-section-py-xxl-1" id="scrollspyOpinion">
-        <div class="container mb-5 mb-md-6 mb-xl-10">
-          <div class="row justify-content-md-center">
-            <div class="col-12 col-md-9 col-lg-9 col-xl-9  col-xxl-9 text-center">
-              <span class="testimonios-title">Los profesionales confían en 
-                <span class="testimonios-title-highlight">CitaPro</span>
+            <div class="swiper-slide">
+              <div class="card-body p-4 p-xxl-5 testimonioCard">
+                <img class="img-fluid mb-4 testimonioCardImg"
+                    loading="lazy"
+                    src="./assets/testimonios/descarga.jpg"
+                    alt="Luna John"
+                    style="width: 120px; height: 120px; bottom: 70px; position: relative;
+                          border-radius: 50%;
+                          background-image: linear-gradient(white, white), 
+                                            linear-gradient(to right, #2bb8fb, #5c7cf2);
+                          background-origin: border-box;
+                          background-clip: content-box, border-box;">
+                <figure class="d-flex flex-column align-items-center">
+                  <figcaption class="text-center">
+                    <div class="quote-container">
+                      <span class="mb-4 testimonioCardTexto1">
+                        Me encanta Citapro, porque me permite tener el control de mi clínica, en cualquier lugar u horario. Disfruto viajar y conocer nuevos lugares, pero gracias al software puedo mantenerme al tanto de las citas agendadas, monitorear o modificar la agenda de mis colaboradores.
+                      </span>
+                      <div class="quote-marks">
+                        <div class="quote-mark left-quote">“</div>
+                        <div class="quote-mark right-quote">”</div>
+                      </div>
+                    </div>
+                    <br><br>
+                    <div class="d-flex flex-column pt-5">
+                      <span class="mb-2 testimonioCardPersona">Dra. Jessica Altamirano</span>
+                      <span class="fs-6 testimonioCardPersonaSub text-secondary mb-0">Ceo Dental Clinic</span>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+            
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="row gy-4 gy-md-0 gx-xxl-5 d-none d-md-flex">
+          
+          <div class="col-12 col-md-4">
+            <div class="card-body p-4 p-xxl-5 testimonioCard">
+              <img class="img-fluid mb-4 testimonioCardImg"
+                  loading="lazy"
+                  src="./assets/testimonios/doctora1.jpeg"
+                  alt="Luna John"
+                  style="width: 120px; height: 120px; bottom: 70px; position: relative;
+                        border-radius: 50%;
+                        background-image: linear-gradient(white, white), 
+                                          linear-gradient(to right, #2bb8fb, #5c7cf2);
+                        background-origin: border-box;
+                        background-clip: content-box, border-box;">
+              <figure class="d-flex flex-column align-items-center">
+                <figcaption class="text-center">
+                  <div class="quote-container">
+                    <span class="mb-4 testimonioCardTexto1">
+                      Tener CitaPro en nuestro centro, fue lo mejor que nos ha pasado, nos permitió diferenciarnos de la competencia e incrementar nuestro facturado. Ahora tenemos el control total de nuestra agenda, nuestros clientes pueden agendar sus citas automáticamente y recibir recordatorios.
+                    </span>
+                    <div class="quote-marks">
+                      <div class="quote-mark left-quote">“</div>
+                      <div class="quote-mark right-quote">”</div>
+                    </div>
+                  </div>
+                  <br><br>
+                  <div class="d-flex flex-column pt-5">
+                    <span class="mb-2 testimonioCardPersona">Juliana Jaramillo</span>
+                    <span class="fs-6 testimonioCardPersonaSub text-secondary mb-0">Madán Medical Spa</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card-body p-4 p-xxl-5 testimonioCard">
+              <img class="img-fluid mb-4 testimonioCardImg"
+                  loading="lazy"
+                  src="./assets/testimonios/doctor1.png"
+                  alt="Luna John"
+                  style="width: 120px; height: 120px; bottom: 70px; position: relative;
+                        border-radius: 50%;
+                        background-image: linear-gradient(white, white), 
+                                          linear-gradient(to right, #2bb8fb, #5c7cf2);
+                        background-origin: border-box;
+                        background-clip: content-box, border-box;">
+              <figure class="d-flex flex-column align-items-center">
+                <figcaption class="text-center">
+                  <div class="quote-container">
+                    <span class="mb-4 testimonioCardTexto1">
+                      Estaba acostumbrado a la clásica agenda manual que llevaba mi asistente, tenía un porcentaje alto de inasistencias por parte de los pacientes. Con el software de Citapro, cambió rotundamente el giro de mi centro médico, ahora todo es más organizado y por supuesto mis ingresos aumentaron significativamente.
+                    </span>
+                    <div class="quote-marks">
+                      <div class="quote-mark left-quote">“</div>
+                      <div class="quote-mark right-quote">”</div>
+                    </div>
+                  </div>
+                  <br><br>
+                  <div class="d-flex flex-column pt-5">
+                    <span class="mb-2 testimonioCardPersona">Dr. Hamilton Hernandez</span>
+                    <span class="fs-6 testimonioCardPersonaSub text-secondary mb-0">Hada Esthetic Spa</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card-body p-4 p-xxl-5 testimonioCard">
+              <img class="img-fluid mb-4 testimonioCardImg"
+                  loading="lazy"
+                  src="./assets/testimonios/descarga.jpg"
+                  alt="Luna John"
+                  style="width: 120px; height: 120px; bottom: 70px; position: relative;
+                        border-radius: 50%;
+                        background-image: linear-gradient(white, white), 
+                                          linear-gradient(to right, #2bb8fb, #5c7cf2);
+                        background-origin: border-box;
+                        background-clip: content-box, border-box;">
+              <figure class="d-flex flex-column align-items-center">
+                <figcaption class="text-center">
+                  <div class="quote-container">
+                    <span class="mb-4 testimonioCardTexto1">
+                      Me encanta Citapro, porque me permite tener el control de mi clínica, en cualquier lugar u horario. Disfruto viajar y conocer nuevos lugares, pero gracias al software puedo mantenerme al tanto de las citas agendadas, monitorear o modificar la agenda de mis colaboradores.
+                    </span>
+                    <div class="quote-marks">
+                      <div class="quote-mark left-quote">“</div>
+                      <div class="quote-mark right-quote">”</div>
+                    </div>
+                  </div>
+                  <br><br>
+                  <div class="d-flex flex-column pt-5">
+                    <span class="mb-2 testimonioCardPersona">Dra. Jessica Altamirano</span>
+                    <span class="fs-6 testimonioCardPersonaSub text-secondary mb-0">Ceo Dental Clinic</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-12 col-md-4 align-self-center w-100 mt-5">
+              <button class="testimonios-button">
+                <span class="testimonios-button-text">
+                  Solicitar Demo
                 </span>
+              </button>
             </div>
-          </div>
         </div>
-
-        <div class="container overflow-hidden pt-5">
-          <div class="row gy-4 gy-md-0 gx-xxl-5">
-            
-            <div class="col-12 col-md-4">
-              <div class="card-body p-4 p-xxl-5 testimonioCard">
-                  <img class="img-fluid mb-4 testimonioCardImg"
-                      loading="lazy"
-                      src="./assets/testimonios/doctora1.jpeg"
-                      alt="Luna John"
-                      style="width: 120px; height: 120px; bottom: 70px; position: relative;
-                             border-radius: 50%;
-                             background-image: linear-gradient(white, white), 
-                                               linear-gradient(to right, #2bb8fb, #5c7cf2);
-                             background-origin: border-box;
-                             background-clip: content-box, border-box;">
-                  <figure class="d-flex flex-column align-items-center">
-                      <figcaption class="text-center">
-                          <div class="quote-container">
-                              <span class="mb-4 testimonioCardTexto1">
-                                  Tener CitaPro en nuestro centro, fue lo mejor que nos ha pasado, nos permitió diferenciarnos de la competencia e incrementar nuestro facturado. Ahora tenemos el control total de nuestra agenda, nuestros clientes pueden agendar sus citas automáticamente y recibir recordatorios.
-                              </span>
-                              <div class="quote-marks">
-                                  <div class="quote-mark left-quote">“</div>
-                                  <div class="quote-mark right-quote">”</div>
-                              </div>
-                          </div>
-                          <br>
-                          <br>
-
-                          <div class="d-flex flex-column pt-5">
-                              <span class="mb-2 testimonioCardPersona">Juliana Jaramillo</span>
-                              <span class="fs-6 testimonioCardPersonaSub text-secondary mb-0">Madán Medical Spa</span>
-                          </div>
-                      </figcaption>
-                  </figure>
-              </div>
-            </div>
-          
-            <div class="col-12 col-md-4">
-              <div class="card-body p-4 p-xxl-5 testimonioCard">
-                  <img class="img-fluid mb-4 testimonioCardImg"
-                      loading="lazy"
-                      src="./assets/testimonios/doctora1.jpeg"
-                      alt="Luna John"
-                      style="width: 120px; height: 120px; bottom: 70px; position: relative;
-                             border-radius: 50%;
-                             background-image: linear-gradient(white, white), 
-                                               linear-gradient(to right, #2bb8fb, #5c7cf2);
-                             background-origin: border-box;
-                             background-clip: content-box, border-box;">
-                  <figure class="d-flex flex-column align-items-center">
-                      <figcaption class="text-center">
-                          <div class="quote-container">
-                              <span class="mb-4 testimonioCardTexto1">
-                                  Estaba acostumbrado a la clásica agenda manual que llevaba mi asistente, tenía un porcentaje alto de inasistencias por parte de los pacientes. Con el software de Citapro, cambió rotundamente el giro de mi centro médico, ahora todo es más organizado y por supuesto mis ingresos aumentaron significativamente.
-                              </span>
-                              <div class="quote-marks">
-                                  <div class="quote-mark left-quote">“</div>
-                                  <div class="quote-mark right-quote">”</div>
-                              </div>
-                          </div>
-                          <br>
-                          <br>
-                          <div class="d-flex flex-column pt-5">
-                              <span class="mb-2 testimonioCardPersona">Dr. Hamilton Hernandez</span>
-                              <span class="fs-6 testimonioCardPersonaSub text-secondary mb-0">Hada Esthetic Spa</span>
-                          </div>
-                      </figcaption>
-                  </figure>
-              </div>
-            </div>
-          
-          
-
-            <div class="col-12 col-md-4">
-              <div class="card-body p-4 p-xxl-5 testimonioCard">
-                  <img class="img-fluid mb-4 testimonioCardImg"
-                      loading="lazy"
-                      src="./assets/testimonios/doctora1.jpeg"
-                      alt="Luna John"
-                      style="width: 120px; height: 120px; bottom: 70px; position: relative;
-                             border-radius: 50%;
-                             background-image: linear-gradient(white, white), 
-                                               linear-gradient(to right, #2bb8fb, #5c7cf2);
-                             background-origin: border-box;
-                             background-clip: content-box, border-box;">
-                  <figure class="d-flex flex-column align-items-center">
-                      <figcaption class="text-center">
-                          <div class="quote-container">
-                              <span class="mb-4 testimonioCardTexto1">
-                                  Me encanta Citapro, porque me permite tener el control de mi clínica, en cualquier lugar u horario. Disfruto viajar y conocer nuevos lugares, pero gracias al software puedo mantenerme al tanto de las citas agendadas, monitorear o modificar la agenda de mis colaboradores.
-                              </span>
-                              <div class="quote-marks">
-                                  <div class="quote-mark left-quote">“</div>
-                                  <div class="quote-mark right-quote">”</div>
-                              </div>
-                          </div>
-                          <br>
-                          <br>
-                          <div class="d-flex flex-column pt-5">
-                              <span class="mb-2 testimonioCardPersona">Dra. Jessica Altamirano</span>
-                              <span class="fs-6 testimonioCardPersonaSub text-secondary mb-0">Ceo Dental Clinic</span>
-                          </div>
-                      </figcaption>
-                  </figure>
-              </div>
-          </div>
-          
-            <div class="col-12 col-md-4 align-self-center w-100 mt-5">
-                <button class="testimonios-button">
-                  <span class="testimonios-button-text">
-                    Solicitar Demo
-                  </span>
-                </button>
-              </div>
-          </div>
-        </div>
-      </section> 
+      </div>
+  </section> 
     
-     <section class="contact">
-        <div class="container">
-            
-        
-            <span class="contact-title">¿Quieres saber más de CitaPro?</span>
-            <br>
-            <span class="contact-subtitle"
-            >Llena el formulario y resolveremos tus dudas</span>
-            <form class="contact-form d-flex flex-column">
-                <input type="text" placeholder="Nombres Completos*" class="contact-input">
-                <input type="email" placeholder="E-mail*" class="contact-input">
-                <div class="d-flex">
-                    <div class="w-50 mr-2">
-                        <input type="text" placeholder="Cédula*" class="contact-input">
-                    </div>
-                    <div class="w-50 ml-2">
-                        <input type="text" placeholder="Celular*" class="contact-input">
-                    </div>
-                </div>
-                <div class="contact-send">
+  <section class="contact">
+      <div class="container">
+          
+      
+          <span class="contact-title">¿Quieres saber más de CitaPro?</span>
+          <br>
+          <span class="contact-subtitle"
+          >Llena el formulario y resolveremos tus dudas</span>
+          <form class="contact-form d-flex flex-column">
+              <input type="text" placeholder="Nombres Completos*" class="contact-input">
+              <input type="email" placeholder="E-mail*" class="contact-input">
+              <div class="contact-inputs">
+                  <div class="contact-content">
+                      <input type="text" placeholder="Cédula*" class="contact-input2">
+                  </div>
+                  <div class="contact-content">
+                      <input type="text" placeholder="Celular*" class="contact-input2">
+                  </div>
+              </div>
+              <div class="contact-camposObligatorios d-flex justify-content-end">
+                  <span class="contact-camposObligatorios-text">
+                      *Campos Obligatorios
+                  </span>
 
-                
-                    <button type="submit" class="contact-button">
-                        <span class="contact-button-text">
-                            Enviar
-                        </span>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section> 
+              </div>
+              <div class="contact-send">
+
+              
+                  <button type="submit" class="contact-button">
+                      <span class="contact-button-text">
+                          Enviar
+                      </span>
+                  </button>
+              </div>
+          </form>
+      </div>
+  </section>
 
 
 
-    <footer class="footer">
+  <footer class="footer">
+    <!-- Configuración para escritorio -->
+    <div class="desktop-footer d-none d-md-block">
       <div class="row justify-content-center align-items-start">
         <div class="footer-section col-12 col-md-4 d-flex justify-content-center align-items-start">
           <img src="assets/footer/logoCitas.png" alt="CitaPro" class="img-fluid w-50">
+        </div>
+        <div class="footer-section col-12 col-md-2 d-flex flex-column justify-content-center align-items-center">
+          <div class="text-start">
+            <span class="footer-title">CitaPro</span>
+            <ul class="list-unstyled">
+              <li class="footer-link">Inicio</li>
+              <li class="footer-link">Servicios</li>
+              <li class="footer-link">Opiniones</li>
+              <li class="footer-link">Precios</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-section col-12 col-md-3 d-flex flex-column justify-content-center align-items-center contacto-borde">
+          <div class="text-start">
+            <span class="footer-title">Contacto</span>
+            <div class="contact-info d-flex flex-column align-items-start">
+              <div class="d-flex align-items-center mb-2">
+                <img src="assets/footer/ubicacion.png" alt="Ubicación" class="img-fluid me-2 pt-2" width="20" height="20">
+                <p>Puerto Santa Ana<br>Edificio The Point Piso 4<br>Oficina 407<br>Guayaquil - Ecuador</p>
+              </div>
+              <p class="d-flex align-items-center">
+                <img src="assets/footer/smarphone.png" alt="Teléfono" class="img-fluid me-2" width="20" height="20"> +593986774663
+              </p>
+              <p class="d-flex align-items-center">
+                <img src="assets/footer/mensaje.png" alt="Correo" class="img-fluid me-2" width="20" height="20"> info@citapro.co
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-section col-12 col-md-3 d-flex flex-column justify-content-center align-items-center">
+          <div class="text-start">
+            <span class="footer-title">Síguenos</span>
+            <div class="social-icons">
+              <img src="assets/footer/instagramIcon.png" alt="Instagram">
+              <img src="assets/footer/fbIcon.png" alt="Facebook">
+              <img src="assets/footer/tiktokIcon.png" alt="TikTok">
+            </div>
+          </div>
+        </div>
       </div>
-      
-          <div class="footer-section col-12 col-md-2 d-flex flex-column justify-content-center align-items-center">
-              <div class="text-start">
-                  <span class="footer-title">CitaPro</span>
-                  <ul class="list-unstyled">
-                      <li class="footer-link">Inicio</li>
-                      <li class="footer-link">Servicios</li>
-                      <li class="footer-link">Opiniones</li>
-                      <li class="footer-link">Precios</li>
-                  </ul>
-              </div>
+    </div>
+  
+    <!-- Configuración para dispositivos móviles -->
+    <div class="mobile-footer d-block d-md-none">
+      <div class="row justify-content-center align-items-start">
+        <div class="footer-section col-6 d-flex justify-content-center align-items-start">
+          <img src="assets/footer/logoCitas.png" alt="CitaPro" class="img-fluid">
+        </div>
+        <div class="footer-section col-6 d-flex flex-column justify-content-center align-items-center">
+          <div class="text-start">
+            <span class="footer-title">Síguenos</span>
+            <div class="social-icons">
+              <img src="assets/footer/instagramIcon.png" alt="Instagram">
+              <img src="assets/footer/fbIcon.png" alt="Facebook">
+              <img src="assets/footer/tiktokIcon.png" alt="TikTok">
+            </div>
           </div>
-          <div class="footer-section col-12 col-md-3 d-flex flex-column justify-content-center align-items-center contacto-borde">
-              <div class="text-start">
-                  <span class="footer-title">Contacto</span>
-                  <div class="contact-info d-flex flex-column align-items-start">
-                      <div class="d-flex align-items-center mb-2">
-                          <img src="assets/footer/ubicacion.png" alt="Ubicación" class="img-fluid me-2 pt-2" width="20" height="20">
-                          <p>Puerto Santa Ana<br>Edificio The Point Piso 4<br>Oficina 407<br>Guayaquil - Ecuador</p>
-                      </div>
-                      <p class="d-flex align-items-center">
-                          <img src="assets/footer/smarphone.png" alt="Teléfono" class="img-fluid me-2" width="20" height="20"> +593986774663
-                      </p>
-                      <p class="d-flex align-items-center">
-                          <img src="assets/footer/mensaje.png" alt="Correo" class="img-fluid me-2" width="20" height="20"> info@citapro.co
-                      </p>
-                  </div>
-              </div>
+        </div>
+        <div class="footer-section col-12 d-flex flex-column justify-content-center align-items-start">
+          <div class="text-start">
+            <ul class="list-unstyled">
+              <li class="footer-link">Inicio</li>
+              <li class="footer-link">Servicios</li>
+              <li class="footer-link">Opiniones</li>
+              <li class="footer-link">Precios</li>
+            </ul>
           </div>
-          <div class="footer-section col-12 col-md-3 d-flex flex-column justify-content-center align-items-center">
-              <div class="text-start">
-                  <span class="footer-title">Síguenos</span>
-                  <div class="social-icons">
-                      <img src="assets/footer/instagramIcon.png" alt="Instagram">
-                      <img src="assets/footer/fbIcon.png" alt="Facebook">
-                      <img src="assets/footer/tiktokIcon.png" alt="TikTok">
-                  </div>
+        </div>
+        <div class="footer-section col-12 d-flex flex-column justify-content-center align-items-start">
+          <div class="text-start">
+            <span class="footer-title">Contacto</span>
+            <div class="contact-info d-flex flex-column align-items-start">
+              <div class="d-flex align-items-center mb-2">
+                <img src="assets/footer/ubicacion.png" alt="Ubicación" class="img-fluid me-2 pt-2" width="20" height="20">
+                <p>Puerto Santa Ana<br>Edificio The Point Piso 4<br>Oficina 407<br>Guayaquil - Ecuador</p>
               </div>
+              <p class="d-flex align-items-center">
+                <img src="assets/footer/smarphone.png" alt="Teléfono" class="img-fluid me-2" width="20" height="20"> +593986774663
+              </p>
+              <p class="d-flex align-items-center">
+                <img src="assets/footer/mensaje.png" alt="Correo" class="img-fluid me-2" width="20" height="20"> info@citapro.co
+              </p>
+            </div>
           </div>
+        </div>
       </div>
-  </footer>  
+    </div>
+  </footer>
+    
+    
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    </script>
+    
+
+    
+
+
 
 </body>
 </html>

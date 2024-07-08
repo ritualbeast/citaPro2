@@ -9,6 +9,7 @@
     background: #ffffff;
     border-radius: 30px;
     overflow: hidden;
+    width: 70%;
 }
 
 .toggle-option {
@@ -71,10 +72,7 @@
     margin-bottom: 10px;
 }
 
-.plan p {
-    font-size: 1em;
-    margin-bottom: 10px;
-}
+
 
 .plan .price {
     font-size: 22px;
@@ -149,14 +147,14 @@
 
 .plan-pro{
     border-radius: 24px;
-    width: 45%;
+    width: 35%;
     background-color: #daeffb !important;
 }
 
 
 .plan-premium{
     border-radius: 24px;
-    width: 45%;
+    width: 35%;
     background-color: #ffffff !important;
 }
 
@@ -176,6 +174,13 @@
     font-family: "Poppins";
 }
 
+.price-amount-decimal{
+    font-size: 30px;
+    color: #002140;
+    font-weight: 700;
+    font-family: "Poppins";
+}
+
 .plan-card-includes{
     font-size: 22px;
     line-height: 27px;
@@ -186,5 +191,146 @@
 }
 
 
+.plan-container .plan {
+    display: none;
+  }
+  
+  .plan-container .plan.active {
+    display: block;
+  }
 
+.planP4{
+    padding: 1.5rem;
+}
+  
+  @media (min-width: 768px) {
+    .plan-container .plan {
+      display: block;
+    }
+  
+    
+  }
+
+  
+    @media (max-width: 768px) {
+        .plan-pro{
+            border-radius: 24px;
+            width: 80%;
+            background-color: #daeffb !important;
+        }
+        
+        
+        .plan-premium{
+            border-radius: 24px;
+            width: 80%;
+            background-color: #ffffff !important;
+        }
+
+        .price-amount{
+            font-size: 48px;
+            letter-spacing: -2px;
+            color: #002140;
+            font-weight: 700;
+            font-family: "Poppins";
+        }
+
+        .price-amount-decimal{
+            font-size: 20px;
+            color: #002140;
+            font-weight: 700;
+            font-family: "Poppins";
+        }
+
+        .plan-card-includes{
+            font-size: 18px;
+            line-height: 23px;
+            color: #0067b8;
+            font-weight: 500;
+            font-family: "Poppins";
+            text-align: center;
+        }
+
+        .plan-card-title {
+            font-size: 24px;
+            color: #002140;
+            font-weight: 700;
+            font-family: "Poppins";
+        }
+
+        .plan-card-description {
+            
+            font-size: 14px;
+            color: #1e1e1e;
+            font-weight: 400;
+            font-family: "Poppins";
+            text-align: center;
+            
+        }
+
+        .plans-title {
+            font-size: 24px;
+            color: #002140;
+            font-weight: 700;
+            font-family: "Poppins";
+        }
+
+        .plans-subtitle {
+            font-size: 16px;
+            line-height: 30px;
+            color: #0067b8;
+            font-weight: 500;
+            font-family: "Poppins";
+            text-align: center;
+        }
+
+        .toggle {
+            display: flex;
+            justify-content: center;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 70%;
+            flex-direction: column; /* Cambia la dirección del flex a columna */
+            align-items: center; /* Centra las opciones verticalmente */
+        }
+        
+        .toggle-option {
+            padding: 10px 10px;
+            width: 100%; /* Asegura que las opciones ocupen todo el ancho */
+            text-align: center;
+            cursor: pointer;
+            font-size: 18px;
+            color: #0067b8;
+            font-weight: 600;
+            font-family: "Poppins";
+        }
+
+        .plan .price {
+            font-size: 14px;
+            line-height: 23px;
+            color: #0067b8;
+            font-weight: 500;
+            font-family: "Poppins";
+            text-align: center;
+        }
+
+        .planP4{
+            padding:0;
+        }
+
+        .plan ul li {
+            background: url('check-icon.png') no-repeat left center;
+            font-size: 10px;
+            line-height: 23px;
+            color: #000000;
+            font-weight: 500;
+            font-family: "Poppins";
+        }
+        
+        
+
+    }
+
+  
+  
 

@@ -51,12 +51,13 @@
 
 
 .crecimiento-title {
-    
+    width: 70%;
     font-size: 38px;
     line-height: 41px;
     color: #0067b8;
     font-weight: 700;
     font-family: "Poppins";
+    margin-bottom: 20px;
 
 }
 
@@ -64,3 +65,89 @@
     width: 70%;
     height: 70%;
 }
+
+.btn-gradient {
+    background: linear-gradient(90deg, #007BFF, #00BFFF);
+    font-size: 21px;
+    color: #ebebeb;
+    font-weight: 700;
+    font-family: "Poppins";
+    border-style: none;
+    border-radius: 11px;
+    margin-top: 20px;
+  }
+  .btn-gradient i {
+    margin-left: 8px;
+  }
+
+  
+
+
+/* Esto es opcional si deseas asegurarte de que los estilos se apliquen correctamente */
+@media (max-width: 767.98px) {
+    .hidden-section {
+        display: none;
+        
+      }
+
+    .hidden-section2 {
+        display: none;
+    }
+
+    .hidden-section3 {
+        display: none;
+    }
+    
+
+    .crecimiento.d-md-none {
+      display: block !important;
+    }
+    .crecimiento.d-none.d-md-block {
+      display: none !important;
+    }
+
+    .crecimiento-title {
+        font-size: 27px;
+        line-height: 29px;
+        color: #0067b8;
+        font-weight: 700;
+        font-family: "Poppins";
+        text-align: center;
+        width: 100%;
+    }
+    .crecimientoBtn {
+      font-size: 21px;
+      color: #ebebeb;
+      font-weight: 700;
+      font-family: "Poppins";
+      border-style: none;
+      border-radius: 11px;
+      background: linear-gradient(90deg, #007BFF, #00BFFF);
+      margin-top: 20px;
+      
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .crecimiento.d-md-none {
+      display: none !important;
+    }
+    .crecimiento.d-none.d-md-block {
+      display: block !important;
+    }
+
+    .crecimiento-title {
+        font-size: 27px;
+        line-height: 29px;
+        color: #0067b8;
+        font-weight: 700;
+        font-family: "Poppins";
+        text-align: center;
+    }
+
+    
+
+    
+
+  }
+  

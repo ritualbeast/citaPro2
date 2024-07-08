@@ -25,6 +25,7 @@
     margin: 20px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     position: relative; /* Para posicionar las comillas correctamente */
+    height: 90%;
 }
 
 .testimonioCardPersona {
@@ -117,3 +118,68 @@
     font-weight: 700;
     font-family: "Poppins";
 }
+
+.d-md-none {
+    display: none;
+  }
+  
+  @media (max-width: 767.98px) {
+    
+    .d-md-none {
+      display: block;
+    }
+  
+    .d-md-flex {
+      display: none !important;
+    }
+
+    .testimonios-title {
+        font-size: 24px;
+    }
+
+    .testimonios-title-highlight {
+        font-size: 24px;
+    }
+
+    .testimonioCardTexto1 {
+        font-size: 15px;
+        color: #000000;
+        font-weight: 300;
+        font-family: "Poppins";
+        text-align: center;
+    }
+
+    .testimonioCardPersona {
+        font-size: 18px;
+        color: #4194f3;
+        font-weight: 500;
+        font-family: "Poppins";
+    }
+
+    .testimonioCardPersonaSub {
+        font-size: 14px;
+        color: #8e8e8e;
+        font-weight: 300;
+        font-family: "Poppins";
+    }
+
+    .quote-mark {
+        font-size: 10rem;
+    }
+
+  }
+  
+  /* CSS */
+.swiper-container {
+    position: relative;
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px; /* Ajusta esto según sea necesario */
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+  

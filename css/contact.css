@@ -30,9 +30,34 @@
     border-color: #4bdaff;
     border-radius: 7px;
     margin: 20px 0;
-    width: 96%;
+    width: 100%;
     align-items : left;
+
     
+}
+
+.contact-input2 {
+    font-size: 21px;
+    color: #4bdaff !important;
+    background-color: #002140;
+    font-weight: 300;
+    font-family: "Poppins";
+    border-style: solid;
+    border-width: 1px;
+    border-color: #4bdaff;
+    border-radius: 7px;
+    margin: 20px 0;
+    width: 99%;
+    align-items : left;
+
+    
+}
+
+.contact-camposObligatorios-text {
+    font-size: 8px;
+    color: #4bdaff;
+    font-weight: 300;
+    font-family: "Poppins";
 }
 
 .contact-button {
@@ -46,4 +71,65 @@
     color: #002140;
     font-weight: 700;
     font-family: "Poppins";
+}
+
+.contact-content {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.contact-inputs {
+    display: flex;
+    width: 100%;
+}
+
+@media (max-width: 767.98px) {
+    .contact-title {
+        font-size: 24px;
+    }
+
+    .contact-subtitle {
+        font-size: 15px;
+        margin-right: 5px;
+        margin-left: 5px;
+
+        
+    }
+
+    .contact-input {
+        font-size: 15px;
+        margin: 10px 0;
+    }
+
+    .contact-input2 {
+        font-size: 15px;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .contact-camposObligatorios-text {
+        font-size: 8px;
+    }
+
+    .contact-button-text {
+        font-size: 15px;
+    }
+
+    .contact-send {
+        margin-top: 40px;
+        font-size: 15px;
+    }
+
+    .contact-content {
+        width: 100%;
+    }
+
+    .contact-inputs {
+        display: block;
+    }
+    .contact-form {
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }

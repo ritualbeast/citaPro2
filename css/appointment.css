@@ -25,6 +25,8 @@
     gap: 20px;
 }
 
+
+
 .business-type {
     display: flex;
     flex-direction: column;
@@ -71,5 +73,61 @@
     font-family: "Poppins";
     text-align: center;
 
+}
+
+
+@media (max-width: 768px) {
+    .appointment-software {
+        padding: 20px;
+    }
+
+    .appointment-software h1 {
+        font-size: 1.5em;
+    }
+
+    .appointment-software p {
+        font-size: 1em;
+    }
+
+    .business-types {
+        gap: 10px;
+    }
+
+    .business-type {
+        width: 100px;
+        height: 140px;
+        border-radius: 0px;
+        background-color: #c3daea;
+        box-shadow: none;
+        align-self: center;
+        justify-content: center;
+    }
+
+    .business-type img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .business-type p {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .appointment-software-title {
+        font-size: 27px;
+        color: #002140;
+        font-weight: 700;
+        font-family: "Poppins";
+    }
+
+    .appointment-software-description {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .business-typesContainer {
+        background-color: #c3daea;
+        border-radius: 10px;
+    }
 }
 

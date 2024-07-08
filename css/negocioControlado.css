@@ -4,6 +4,7 @@
     color: #0067b8;
     font-weight: 600;
     font-family: "Poppins";
+    margin-top: 10%;
 
 }
 
@@ -18,4 +19,51 @@
     background-color: #dfedf7;
     margin: 0;
     padding: 0;
+}
+
+
+.position-relative {
+    position: relative;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 45%;  /* Ajusta estos valores según tus necesidades */
+    left: 55%; /* Ajusta estos valores según tus necesidades */
+    transform: translate(-50%, -50%); /* Centra el GIF en el contenedor */
+    width: 75%; /* Ajusta el tamaño del GIF según tus necesidades */
+    height: auto; /* Mantiene la proporción del GIF */
+    border-radius: 10px;
+    pointer-events: none; /* Evita que el GIF interfiera con los eventos del ratón */
+}
+
+
+@media (max-width: 768px) {
+    .negocioControladoTitulo {
+        
+        font-size: 25px;
+        line-height: 27px;
+        color: #0067b8;
+        font-weight: 600;
+        font-family: "Poppins";
+        margin-top: 0%;
+    }
+
+    .negocioControladoTexto {
+        font-size: 14px;
+        color: #1e1e1e;
+        font-weight: 400;
+        font-family: "Poppins";
+        
+    }
+
+    .containerNegocioControlado {
+        padding: 50px !important;
+    }
 }

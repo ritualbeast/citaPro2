@@ -19,3 +19,27 @@
     margin: 0;
     padding: 0;
 }
+
+@media (max-width: 768px) {
+
+    
+    .tiempoValiosoTitulo {
+        
+        font-size: 25px;
+        line-height: 27px;
+        color: #0067b8;
+        font-weight: 600;
+        font-family: "Poppins";
+    }
+
+    .tiempoValiosoTexto {
+        font-size: 14px;
+        color: #1e1e1e;
+        font-weight: 400;
+        font-family: "Poppins";
+    }
+
+    .containerTiempoValioso {
+        padding: 50px !important;
+    }
+}
