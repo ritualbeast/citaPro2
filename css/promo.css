@@ -231,11 +231,11 @@ body {
 
 .promo-image .video {
     position: relative;
-    top: -282px;
+    top: -300px;
    
-    left: -17%;
-    width: 40%;
-    height: 23%;
+    left: -10%;
+    width: 36%;
+    height: 155px;
     object-fit: cover;
     border-radius: 5px;
     pointer-events: none;
@@ -339,7 +339,8 @@ body {
 
     .promo-image .video {
         top: -160px;
-        left: -13%;
+        left: -16%;
+        height: 90px;
     }
 
     
